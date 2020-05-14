@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 960px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #f7f7f7;
+}
+
+.form-ktp {
+    margin-top: 50px;
+    width: 100px;
+}
+
+.form-ktp h4 {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: max-content;
+}
+
+.form-input {
+    margin-bottom: 10px;
+    width: 700%;
+    height: 30px;
+    font-size: 18px;
+}
+
+.form-input p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-ktp-button {
+    margin-top: 35px;
+    width: 210px;
+    height: 40px;
+    background-color: lightskyblue;
+    color: white;
+    font-weight: bold;
+}
+
+.btn-delete {
+    width: 210px;
+    height: 40px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
+.list-ktp {
+    width: 100%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+#tKtp {
+    width: 100%;
+}
+
+#tKtp td, #tKtp th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tKtp th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: turquoise;
+    color: white;
+}

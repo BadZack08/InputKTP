@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Input Data KTP</title>
+</head>
+<body>
+
+    <div class="form-ktp">
+        <h4>Masukan data KTP Anda</h4>
+        <input type="text" class="form-input" placeholder="NIK">
+        <br>
+        <input type="text" class="form-input" placeholder="Nama">
+        <br>
+        <input type="text" class="form-input" placeholder="Tempat, Tanggal Lahir">
+        <br>
+        <input type="text" class="form-input" placeholder="Alamat">
+        <br>
+        <input type="text" class="form-input" placeholder="RT/RW">
+        <br>
+        <input type="text" class="form-input" placeholder="Kelurahan/Desa">
+        <br>
+        <input type="text" class="form-input" placeholder="Kecamatan">
+        <br>
+        <input type="text" class="form-input" placeholder="Agama">
+        <br>
+        <input type="text" class="form-input" placeholder="Status">
+        <br>
+        <input type="text" class="form-input" placeholder="Pekerjaan">
+        <br>
+        <input type="text" class="form-input" placeholder="Kewarganegaraan">
+        <br>
+        <div class="form-input">
+            <p>Foto</p>
+            <input type="file" placeholder="Foto">
+        </div>
+        <button class="form-ktp-button">Simpan</button>
+    </div>
+
+    <div class="list-ktp">
+        <button class="btn-delete">Hapus</button>
+        <table id="tKtp">
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="checkAll"> Tandai semua</th>
+                    <th>No. </th>
+                    <th>Nik</th>
+                    <th>Nama</th>
+                    <th>Foto</th>
+                </tr>
+            </thead>
+            <tbody id="dataKtp">
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
