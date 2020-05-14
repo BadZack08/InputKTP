@@ -7,12 +7,12 @@
     <title>Input Data KTP</title>
 </head>
 <body>
-
+   
     <div class="form-ktp">
         <h4>Masukan data KTP Anda</h4>
-        <input type="text" class="form-input" placeholder="NIK">
+        <input type="text" id="no_ktp" class="form-input" placeholder="NIK">
         <br>
-        <input type="text" class="form-input" placeholder="Nama">
+        <input type="text" id="nama_lengkap" class="form-input" placeholder="Nama">
         <br>
         <input type="text" class="form-input" placeholder="Tempat, Tanggal Lahir">
         <br>
@@ -32,10 +32,6 @@
         <br>
         <input type="text" class="form-input" placeholder="Kewarganegaraan">
         <br>
-        <div class="form-input">
-            <p>Foto</p>
-            <input type="file" placeholder="Foto">
-        </div>
         <button class="form-ktp-button">Simpan</button>
     </div>
 
@@ -48,7 +44,7 @@
                     <th>No. </th>
                     <th>Nik</th>
                     <th>Nama</th>
-                    <th>Foto</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody id="dataKtp">

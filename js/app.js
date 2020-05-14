@@ -4,7 +4,11 @@ let formInput,
     bodyTable,
     buttonDelete,
     checkAll,
-    checkList;
+    checkList,
+
+    //input field
+    no_ktp,
+    nama_lengkap
 
 formInput       = document.querySelector('.form-ktp');
 buttonKtp       = document.querySelector('.form-ktp-button');
@@ -13,7 +17,10 @@ bodyTable       = document.querySelector('#dataKtp');
 buttonDelete    = document.querySelector('.btn-delete');
 checkAll        = document.querySelector('#checkAll');
 checkList       = document.querySelectorAll('.check-list');
+no_ktp          = document.querySelector('#no_ktp');
+nama_lengkap    = document.querySelector('#nama_lengkap');
 
+// click button save to localstorage
 buttonKtp.addEventListener('click', saveKtp);
 
 checkAll.addEventListener('click', function() {
@@ -30,8 +37,11 @@ checkAll.addEventListener('click', function() {
 
 buttonDelete.addEventListener('click', function() {
     let ktp = fromStorage();
+
     let ids = [];
+
     const checked = Array.from(document.querySelectorAll('.check-list')).filter(item => item.checked === true)
+
     if (checked.length > 0){
         checked.forEach(item => {
             let id = +item.getAttribute('data-id');
@@ -41,6 +51,9 @@ buttonDelete.addEventListener('click', function() {
         alert('Silahkan tandai datanya')
     }
 
+    console.log(ids, '[variable ids]');
+
+    return;
     const filterKtp = ktp.filter(item => !ids.includes(item.id));
 
     updateStorage(filterKtp)
@@ -48,12 +61,14 @@ buttonDelete.addEventListener('click', function() {
 
 function saveKtp()
 {
-    if(formInput.value === ""){
-        alert('Input tidak boleh kosong')
-    } else {
-        savetoStorage(formInput.value)
-        showKtp();
+    const data_ktp = {
+        no_ktp: no_ktp.value,
+        nama_lengkap: nama_lengkap.value
     }
+
+    savetoStorage(data_ktp);
+
+    showKtp();
 }
 
 function fromStorage()
@@ -68,11 +83,20 @@ function updateStorage(data)
     showKtp()
 }
 
-function savetoStorage(ktp){
-    var array_ktp, id;
+function savetoStorage( data_ktp ){
+
+    var array_ktp, id; //initialisasi variable
+
     array_ktp = JSON.parse(localStorage.getItem('ktp') || '[]');
+
     id = array_ktp.length + 1 * new Date().getTime();
-    array_ktp.push({ id: id, list: ktp, time: get_time()})
+
+    array_ktp.push({ 
+        id: id, 
+        no_ktp: data_ktp.no_ktp , 
+        nama_lengkap:data_ktp.nama_lengkap, 
+        time: get_time()});
+
     localStorage.setItem('ktp', JSON.stringify(array_ktp));
 
     clearInput();
@@ -80,7 +104,7 @@ function savetoStorage(ktp){
 
 function clearInput()
 {
-    formInput.value = "";
+    // formInput.value = "";
 }
 
 function showKtp()
@@ -95,10 +119,11 @@ function showKtp()
                 <tr class="row-${item.id}">
                     <td> <input type="checkbox" class="check-list" data-id="${item.id}"/> </td>
                     <td> ${no++} </td>
-                    <td> ${item.nik} </td>
-                    <td> ${item.nama} </td>
-                    <td> ${item.time} </td>
-                    <td> ${item.foto} </td>                
+                    <td> ${item.no_ktp} </td>
+                    <td> ${item.nama_lengkap} </td>
+                    <td> - </td>
+                    <td> - </td>   
+                    <td> - </td>             
                 </tr>
             `
         })
